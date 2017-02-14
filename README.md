@@ -3,8 +3,7 @@
 ## Contributors:
 + Shon Inouye
 + Edward Kim
-+ Megan Nguyen
-+ Eri Kawakami
+
 
 ## Abstract
 This repo is dedicated to create data visualization for uber and other for-hire vehicle pickups in New York City. We used datasets from [Kaggle](https://www.kaggle.com/fivethirtyeight/uber-pickups-in-new-york-city).
