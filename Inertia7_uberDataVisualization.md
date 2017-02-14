@@ -33,4 +33,5 @@ This repo is dedicated to create data visualization for uber and other for-hire 
     nyMap + 
       geom_point(data = uber_apr14, mapping = aes(x = Lon, y = Lat))
 
-
+##Output
+![poke](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
