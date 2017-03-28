@@ -29,7 +29,7 @@ First, we wanted to take a look at the distribution of pickup points throughout 
     fullMap <- nyMap + apr14_plot
     fullMap
 
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
+![](Images/Uber_plot_darkblue.png)
 
 ### Uber Pickups by TLC Base Code
 With every Uber pickup, there is a TLC base company code that is associated with it. To get a better understanding of what these codes mean, we created a bar graph of the number of pickups for each base code.
@@ -54,7 +54,7 @@ With every Uber pickup, there is a TLC base company code that is associated with
                     type = "bar")
     basedata
 
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
+![](Images/UberPickups-Base_plotly.png)
 
 Here, we can see that there is a very large difference between the number of pickups for each base code. Base codes B02682 and B02598 have over 150,000 pickups in the month of April while base codes B02512 and B02764 do not even reach 50,000 pickups.
 Now, we can plot the pickup points on a map and distinguish them based on their base codes.
@@ -68,7 +68,7 @@ Now, we can plot the pickup points on a map and distinguish them based on their 
 
     base_plot
 
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
+![](Images/Uber_base_mapPlot.png)
 
 We can also plot the pickups for each base individually in order to see which areas these codes cover.
 
@@ -114,9 +114,9 @@ We can also plot the pickups for each base individually in order to see which ar
     plot(base_B02682)
     plot(base_B02764)
 
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
-![](http://24.media.tumblr.com/tumblr_lz7ewsL0Sg1rp2r43o1_1280.jpg)
+![](Images/Uber_base_B02512.png)
+![](Images/Uber_base_B02598.png)
+![](Images/Uber_base_B02617.png)
+![](Images/Uber_base_B02682.png)
+![](Images/Uber_base_B02764.png)
 
