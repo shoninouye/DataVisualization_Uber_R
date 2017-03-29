@@ -1,30 +1,33 @@
 library(ggplot2)
 library(plotly)
-library(data.table)
 library(ggmap)
 library(plyr)
 library(dplyr)
 
 uber_apr14 <- read.csv("/Users/Shon/Documents/MyProjects/Data Science/uber data visualization/uber-pickups-in-new-york-city/uber-raw-data-apr14.csv")
 
-apr14_plot <- ggplot(data = uber_apr14,  
-               aes(x = Lat,
-                   y = Lon)) +
-  geom_point()
+apr14_plot <- geom_point(data = uber_apr14, 
+                         aes(x = Lon, y = Lat), 
+                         colour = '#000066',
+                         size = 0.1, alpha = 0.5, na.rm = TRUE)
 
 apr14_plot
 
 nyMap <- qmap("New York City")
 
-nyMap + 
-  geom_point(data = uber_apr14, mapping = aes(x = Lon, y = Lat), colour = 'blue',
-             size = 0.1, alpha = 0.5, na.rm = TRUE)
+fullMap <- nyMap + apr14_plot
+fullMap
 
-main_plot <- nyMap + 
+
+###PLOT BY BASES
+base_plot <- nyMap + 
   geom_point(data = uber_apr14, 
-             mapping = aes(x = Lon, y = Lat,  colour = factor(uber_apr14$Base)), 
-             size = 0.1, alpha = 0.4, na.rm = TRUE) +
+             mapping = aes(x = Lon, y = Lat, colour = factor(uber_apr14$Base)), 
+             size = 0.1, alpha = 0.4, na.rm = TRUE) + 
   scale_color_manual(values = c("#008080", "#7F462c", "#FF2400", "#2B60DE", "#CA226B"))
+
+base_plot
+
 #COLOR:
 # + scale_fill_manual(values = c("__", "___", "___"))
 
@@ -43,12 +46,12 @@ numrow_B02617 <- nrow(uber_baseB02617)
 numrow_B02682 <- nrow(uber_baseB02682)
 numrow_B02764 <- nrow(uber_baseB02764)
 
-basedata <- [graph_objs.Bar(x = [B02512, B02598, B02617, B02682, B02764],
-                            y = [numrow_B02512, numrow_B02598, numrow_B02617, numrow_B02682, numrow_B02764])
-             ]
-base_length_list <- c(numrow_B02512, numrow_B02598, numrow_B02617, numrow_B02682, numrow_B02764)
+basedata <- plot_ly(x = c("B02512", "B02598", "B02617", "B02682", "B02764"),
+                    y = c(numrow_B02512, numrow_B02598, numrow_B02617, numrow_B02682, numrow_B02764),
+                    name = "Uber Pickups by TLC Base Code",
+                    type = "bar")
+basedata
 
-barplot(base_length_list)
 
 ### PLOT DATA BY UBER BASE ###
 
@@ -87,7 +90,6 @@ base_B02764 <- nyMap +
              alpha = 0.4, na.rm = TRUE) +
   scale_color_manual(values = c("#CA226B"))
 
-plot(main_plot)
 plot(base_B02512)
 plot(base_B02598)
 plot(base_B02617)
@@ -98,9 +100,7 @@ ggplot(data = uber_apr14,
            aes(x = Lon, y = Lat,  colour = factor(uber_apr14$Base))) +
   geom_point(size = 0.1, alpha = 0.4, na.rm = TRUE) +
   scale_color_manual(values = c("#008080", "#7F462c", "#FF2400", "#2B60DE", "#CA226B")) + 
-  facet_wrap(~ Base) +
-  theme_bw()
-
+  facet_wrap(~ Base) 
 
 #Plotyly to plot map data?
 
