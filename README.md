@@ -15,3 +15,16 @@ To Do:
 + Create GIF of pickup points over time
 + Write up readme
 + Add plots and graphs
+
+Base Code | Base Name
+---|---------
+B02512 | Unter
+B02598 | Hinter
+B02617 | Weiter
+B02682 | Schmecken
+B02764 | Danach-NY
+B02765 | Grun
+B02835 | Dreist
+B02836 | Drinnen
+
+These are Uber's bases located in New York
