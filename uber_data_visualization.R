@@ -6,6 +6,9 @@ library(dplyr)
 
 uber_apr14 <- read.csv("/Users/Shon/Documents/MyProjects/Data Science/uber data visualization/uber-pickups-in-new-york-city/uber-raw-data-apr14.csv")
 
+uber_apr14$Date.Time <- as.Date(uber_apr14$Date.Time, "%m/%d/%Y")
+uber_apr14$Day <- format(as.Date(uber_apr14$Date.Time, format = "%m/%d/%Y"), "%d") #adds a Day column
+
 apr14_plot <- geom_point(data = uber_apr14, 
                          aes(x = Lon, y = Lat), 
                          colour = '#000066',
