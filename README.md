@@ -4,11 +4,6 @@
 + Shon Inouye
 + Edward Kim
 
-To Do:
-+ Add to abstract (Edward)
-+ Figure out how to separate data by date/time (Edward and Shon)
-+ Create plotly graph of number of pickups vs days of the month (Edward)
-+ Create GIF of pickup points over time (Shon) 
 
 ## Abstract
 This repo is dedicated to create data visualization for uber and other for-hire vehicle pickups in New York City. We used datasets from [Kaggle](https://www.kaggle.com/fivethirtyeight/uber-pickups-in-new-york-city).
