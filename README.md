@@ -1,4 +1,7 @@
-# DataVisualization_Uber_R
+# UBER PICKUPS IN NEW YORK CITY
+## Data visualization using R  
+
+
 
 ## Contributors:
 + Shon Inouye
