@@ -5,9 +5,24 @@ library(plyr)
 library(dplyr)
 
 uber_apr14 <- read.csv("/Users/Shon/Documents/MyProjects/Data Science/uber data visualization/uber-pickups-in-new-york-city/uber-raw-data-apr14.csv")
-
+###
+#This produces a plotly graph showing the total rides per day.
 uber_apr14$Date.Time <- as.Date(uber_apr14$Date.Time, "%m/%d/%Y")
 uber_apr14$Day <- format(as.Date(uber_apr14$Date.Time, format = "%m/%d/%Y"), "%d") #adds a Day column
+#counting the rides for each day
+newber <- count(uber_apr14, as.numeric(Day))
+colnames(newber)[1] <- "Day"
+colnames(newber)[2] <- "Number of Rides"
+
+line <- ggplot(newber, aes(x = Day, y = `Number of Rides`)) +
+  geom_area(alpha = 1, position = position_dodge(width = 0.05), color = '#99cc00', fill = '#787a76') +
+  xlab("Day") + ylab("Total Rides per Day") +
+  ggtitle("Total Uber Rides in New York City in the month of April") + 
+  theme_minimal()
+
+ggplotly(line)
+
+###
 
 apr14_plot <- geom_point(data = uber_apr14, 
                          aes(x = Lon, y = Lat), 
