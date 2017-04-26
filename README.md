@@ -10,6 +10,7 @@
 
 ## Abstract
 This repo is dedicated to create data visualization for uber and other for-hire vehicle pickups in New York City. We used datasets from [Kaggle](https://www.kaggle.com/fivethirtyeight/uber-pickups-in-new-york-city). The goal of this project was to visualize the data in different ways and point out any interesting discoveries.
+The data came with some missing values, so the first step in the project was to clean the data into something usable. One thing that was ambiguous at first were the base codes that accompanied each uber pickup. A quick search led to these codes being associated with several of Uber's bases.
 
 
 Base Code | Base Name
@@ -23,15 +24,16 @@ B02765 | Grun
 B02835 | Dreist
 B02836 | Drinnen
 
-These are Uber's bases located in New York. Each uber pickup is affiliated with a TLC company base. 
+These are Uber's bases located in New York. Each uber pickup is affiliated with a TLC(Taxi and Limousine Commission) company base. 
 
 ### Loading Packages
 
     library(ggplot2)
-    library(plotly)
-    library(ggmap)
-    library(plyr)
+    library(plotly) #used along with ggplot2 for data visualization.
+    library(ggmap)  #used for geocoding
+    library(plyr)   #used along with dplyr to aggregate data
     library(dplyr)
+
 
 ### Overview of Uber Pickups
 First, we wanted to take a look at the distribution of pickup points throughout New York City. 
@@ -73,7 +75,7 @@ With every Uber pickup, there is a TLC base company code that is associated with
 
 ![](Images/UberPickups-Base_plotly.png)
 
-Here, we can see that there is a very large difference between the number of pickups for each base code. Base codes B02682 and B02598 have over 150,000 pickups in the month of April while base codes B02512 and B02764 do not even reach 50,000 pickups.
+Here, we can see that there is a very large difference between the number of pickups for each base code. Base codes B02682 (Schmecken) and B02598 (Hinter) have over 150,000 pickups in the month of April while base codes B02512 (Unter) and B02764 (Danach-NY) do not even reach 50,000 pickups.
 Now, we can plot the pickup points on a map and distinguish them based on their base codes.
 
     ###PLOT BY BASES
@@ -136,5 +138,9 @@ We can also plot the pickups for each base individually in order to see which ar
 ![](Images/Uber_base_B02617.png)
 ![](Images/Uber_base_B02682.png)
 ![](Images/Uber_base_B02764.png)
+
+## Overview of Total Pickups 
+
+![](Images/Uber_TotalRidesperDayPlotly.png)
 
 
