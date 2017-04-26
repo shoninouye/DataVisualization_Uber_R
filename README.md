@@ -10,7 +10,7 @@
 
 ## Abstract
 This repo is dedicated to create data visualization for uber and other for-hire vehicle pickups in New York City. We used datasets from [Kaggle](https://www.kaggle.com/fivethirtyeight/uber-pickups-in-new-york-city). The goal of this project was to visualize the data in different ways and point out any interesting discoveries.
-The data came with some missing values, so the first step in the project was to clean the data into something usable. One thing that was ambiguous at first were the base codes that accompanied each uber pickup. A quick search led to these codes being associated with several of Uber's bases.
+One thing that was ambiguous at first were the base codes that accompanied each uber pickup. A quick search led to these codes being associated with several of Uber's bases.
 
 
 Base Code | Base Name
@@ -139,8 +139,29 @@ We can also plot the pickups for each base individually in order to see which ar
 ![](Images/Uber_base_B02682.png)
 ![](Images/Uber_base_B02764.png)
 
-## Overview of Total Pickups 
+### Using Plotly to See Overall Pickups Over Time  
+    uber_apr14$Date.Time <- as.Date(uber_apr14$Date.Time, "%m/%d/%Y")
+    uber_apr14$Day <- format(as.Date(uber_apr14$Date.Time, format = "%m/%d/%Y"), "%d") #adds a Day column
+    #counting the rides for each day
+    newber <- count(uber_apr14, as.numeric(Day))
+    colnames(newber)[1] <- "Day"
+    colnames(newber)[2] <- "Number of Rides"
 
+
+    line <- ggplot(newber, aes(x = Day, y = `Number of Rides`)) +
+     geom_area(alpha = 1, position = position_dodge(width = 0.05), color = '#99cc00', fill = '#787a76') +
+    xlab("Day") + ylab("Total Rides per Day") +
+    ggtitle("Total Uber Rides in New York City in the month of April") + 
+    theme_minimal()
+
+    ggplotly(line)
+We created a new column in our dataset that had each uber pickup with the day it occured. This was necessary because the original date was in a format that was not compatible. Once we had the day for each pickup, we could sum the number of rides on for a particular day and graph it to create an interactive linegraph.
 ![](Images/Uber_TotalRidesperDayPlotly.png)
+
+We chose specifically the month of april, not for any particular reason, in order to showcase a linegraph produced through plotly. We see that across the course of the month, the total number of rides fluctuate between highs and lows, and we see that at the end of the month there is a spike in usage.
+
+## Conclusion
+
+Given our dataset, we produced points on a map, a histogram, and a line graph. Our original goal was to visualize the data in order to see any interesting observations. By geocoding, we were able to clearly see which areas of New York were more dense in activity. If the maps by base were not enough, the histogram clearly shows which Uber bases complete more pickups. Finally, the line graph allows us to see if there are any trends within the pickup activity. 
 
 
