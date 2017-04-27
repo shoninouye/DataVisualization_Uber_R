@@ -56,7 +56,8 @@ We then got a map of New York City using the ggmap package.
                  color = "bw")
     NYmap <- ggmap(NY)
     
-Using the map of New York City as the background, we plotted the Uber pickup locations.
+Using the map of New York City as the background, we plotted the Uber pickup locations. Because we used the "city" zoom value for our map of New York City, we decided that all pickup locations outside the map would be labeled as outliers.
+
 
     # Plot Uber pickup locations on top of New York map
     fullMap <- NYmap + geom_point(data = uber_apr14,
