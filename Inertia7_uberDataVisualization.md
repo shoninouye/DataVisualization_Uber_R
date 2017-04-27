@@ -161,8 +161,6 @@ We can also plot the pickups for each base individually in order to see which ar
 ![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02764.PNG?raw=true)
 
 ### Using Plotly to See Pickups Over Time  
-    uber_apr14$Date.Time <- as.Date(uber_apr14$Date.Time, "%m/%d/%Y")
-    uber_apr14$Day <- format(as.Date(uber_apr14$Date.Time, format = "%m/%d/%Y"), "%d") #adds a Day column
     #counting the rides for each day
     newber <- count(uber_apr14, as.numeric(Day))
     colnames(newber)[1] <- "Day"
