@@ -47,7 +47,7 @@ After reading the data, added a column for the day of the week. This will be use
     uber_apr14$Date.Time <- as.Date(uber_apr14$Date.Time, "%m/%d/%Y")
     uber_apr14$Day <- format(as.Date(uber_apr14$Date.Time, format = "%m/%d/%Y"), "%d") #adds a Day column
 
-We then got a map of New York City using the ggmap package.
+We then got a map of New York City using the ggmap package. 
 
     # Get map of New York City
     NY <- get_map(location = c(lon = mean(uber_apr14$Lon), lat = mean(uber_apr14$Lat)), 
@@ -56,7 +56,7 @@ We then got a map of New York City using the ggmap package.
                  color = "bw")
     NYmap <- ggmap(NY)
     
-Using the map of New York City as the background, we plotted the Uber pickup locations.
+Using the map of New York City as the background, we plotted the Uber pickup locations. Because we used the "city" zoom value for our map of New York City, we decided that all pickup locations outside the map would be labeled as outliers.
 
     # Plot Uber pickup locations on top of New York map
     fullMap <- NYmap + geom_point(data = uber_apr14,
