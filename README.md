@@ -178,7 +178,7 @@ We can also plot the pickups for each base individually in order to see which ar
 
     ggplotly(line)
 We created a new column in our dataset that had each uber pickup with the day it occured. This was necessary because the original date was in a format that was not compatible. Once we had the day for each pickup, we could sum the number of rides on for a particular day and graph it to create an interactive linegraph.
-![](Images/Uber_TotalRidesperDayPlotly.png)
+![](IMAGES/Uber_TotalRidesperDayPlotly.PNG)
 
 We chose specifically the month of april, not for any particular reason, in order to showcase a linegraph produced through plotly. We see that across the course of the month, the total number of rides fluctuate between highs and lows, and we see that at the end of the month there is a spike in usage.
 
