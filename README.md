@@ -109,6 +109,7 @@ Now, we can plot the pickup points on a map and distinguish them based on their 
 
 ![](IMAGES/Uber_plot_bases.png)
 
+## Plot of Uber Pickups for each Individual Base Code
 We can also plot the pickups for each base individually in order to see which areas these codes cover.
 
     ### PLOT DATA BY UBER BASE ###
@@ -153,13 +154,13 @@ We can also plot the pickups for each base individually in order to see which ar
     plot(base_B02682)
     plot(base_B02764)
 
-![](Images/Uber_base_B02512.png)
-![](Images/Uber_base_B02598.png)
-![](Images/Uber_base_B02617.png)
-![](Images/Uber_base_B02682.png)
-![](Images/Uber_base_B02764.png)
+![](IMAGES/Uber_base_B02512.png)
+![](IMAGES/Uber_base_B02598.png)
+![](IMAGES/Uber_base_B02617.png)
+![](IMAGES/Uber_base_B02682.png)
+![](IMAGES/Uber_base_B02764.png)
 
-### Using Plotly to See Overall Pickups Over Time  
+### Using Plotly to See Pickups Over Time  
     uber_apr14$Date.Time <- as.Date(uber_apr14$Date.Time, "%m/%d/%Y")
     uber_apr14$Day <- format(as.Date(uber_apr14$Date.Time, format = "%m/%d/%Y"), "%d") #adds a Day column
     #counting the rides for each day
