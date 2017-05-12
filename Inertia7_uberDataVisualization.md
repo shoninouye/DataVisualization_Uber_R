@@ -1,18 +1,9 @@
-# UBER PICKUPS IN NEW YORK CITY
-## Data visualization using R  
-
-#<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~inouyesan/12.embed">&nbsp;</iframe>
-![](<div>
-    <a href="https://plot.ly/~inouyesan/12/?share_key=uMk4F0PESgoQu3KdtPG6ZC" target="_blank" title="baseBarGraph" style="display: block; text-align: center;"><img src="https://plot.ly/~inouyesan/12.png?share_key=uMk4F0PESgoQu3KdtPG6ZC" alt="baseBarGraph" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="inouyesan:12" sharekey-plotly="uMk4F0PESgoQu3KdtPG6ZC" src="https://plot.ly/embed.js" async></script>
-</div>)
-
-## Contributors:
+# Contributors:
 + Shon Inouye
 + Edward Kim
 
 
-## Introduction
+# Introduction
 This repo is dedicated to create data visualization for uber and other for-hire vehicle pickups in New York City. We used datasets from [Kaggle](https://www.kaggle.com/fivethirtyeight/uber-pickups-in-new-york-city). The goal of this project was to visualize the data in different ways and point out any interesting discoveries.
 One thing we sought to discover was the meaning behind the base codes that accompanied each uber pickup. A quick search led to these codes being associated with several of Uber's bases.
 
@@ -30,7 +21,7 @@ B02836 | Drinnen
 
 These are Uber's bases located in New York. Each uber pickup is affiliated with a TLC (Taxi and Limousine Commission) company base. 
 
-## Loading Packages
+# Loading Packages
 
     library(ggplot2)
     library(plotly) #used along with ggplot2 for data visualization.
@@ -39,7 +30,7 @@ These are Uber's bases located in New York. Each uber pickup is affiliated with 
     library(dplyr)
 
 
-## Plot of Total Uber Pickups
+# Plot of Total Uber Pickups
 First, we read the data taken from Kaggle.com. In order to keep the plot simple, we only used Uber pickup data from April 2014. 
 
     # Read data
@@ -73,7 +64,7 @@ Using the map of New York City as the background, we plotted the Uber pickup loc
 ![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_plot_all2.png?raw=true)
 
 
-## Plot of Uber Pickups by TLC Base Code
+# Bar Graph of Uber Pickups by TLC Base Code
 With every Uber pickup, there is a TLC base company code that is associated with it. To get a better understanding of what these codes mean, we created a bar graph of the number of pickups for each base code.
 
     # SEPARATING DATA BASED ON UBER BASE 
@@ -97,7 +88,7 @@ With every Uber pickup, there is a TLC base company code that is associated with
                     type = "bar")
     basedata
 
-![](IMAGES/Uber_base_bargraph_plotly.png)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_bargraph_plotly.png?raw=true)
 
 Here, we can see that there is a very large difference between the number of pickups for each base code. Base codes B02682 (Schmecken) and B02598 (Hinter) have over 150,000 pickups in the month of April while base codes B02512 (Unter) and B02764 (Danach-NY) do not even reach 50,000 pickups.
 Now, we can plot the pickup points on a map and distinguish them based on their base codes.
@@ -111,9 +102,9 @@ Now, we can plot the pickup points on a map and distinguish them based on their 
 
     base_plot
 
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_bargraph_plotly.png?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_plot_bases.png?raw=true)
 
-## Plot of Uber Pickups for each Individual Base Code
+# Plot of Uber Pickups for each Individual Base Code
 We can also plot the pickups for each base individually in order to see which areas these codes cover.
 
     ### PLOT DATA BY UBER BASE ###
@@ -164,7 +155,9 @@ We can also plot the pickups for each base individually in order to see which ar
 ![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02682.PNG?raw=true)
 ![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02764.PNG?raw=true)
 
-### Using Plotly to See Pickups Over Time  
+# Using Plotly to See Pickups Over Time  
+    uber_apr14$Date.Time <- as.Date(uber_apr14$Date.Time, "%m/%d/%Y")
+    uber_apr14$Day <- format(as.Date(uber_apr14$Date.Time, format = "%m/%d/%Y"), "%d") #adds a Day column
     #counting the rides for each day
     newber <- count(uber_apr14, as.numeric(Day))
     colnames(newber)[1] <- "Day"
@@ -181,10 +174,9 @@ We can also plot the pickups for each base individually in order to see which ar
 We created a new column in our dataset that had each uber pickup with the day it occured. This was necessary because the original date was in a format that was not compatible. Once we had the day for each pickup, we could sum the number of rides on for a particular day and graph it to create an interactive linegraph.
 ![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_TotalRidesperDayPlotly.PNG?raw=true)
 
-We chose specifically the month of april, not for any particular reason, in order to showcase a linegraph produced through plotly. We see that across the course of the month, the total number of rides fluctuate between highs and lows, and we see that at the end of the month there is a spike in usage.
 
-## Conclusion
+We did not choose the month of April for any particular reason - any month would have worked. The data was just used in order to showcase a line graph produced through plotly. We see that across the course of the month, the total number of rides fluctuate between highs and lows, and we see that at the end of the month there is a spike in usage.
 
-Given our dataset, we produced points on a map, a histogram, and a line graph. Our original goal was to visualize the data in order to see any interesting observations. By geocoding, we were able to clearly see which areas of New York were more dense in activity. If the maps by base were not enough, the histogram clearly shows which Uber bases complete more pickups. Finally, the line graph allows us to see if there are any trends within the pickup activity. 
+# Conclusion
 
-
+Given our dataset, we produced points on a map, a histogram, and a line graph. Our original goal was to visualize the data in order to see any interesting observations. By geocoding, we were able to clearly see which areas of New York were more dense in activity. If the maps by base were not enough, the histogram clearly shows which Uber bases complete more pickups. Finally, the line graph allows us to see if there are any trends within the pickup activity.
