@@ -1,7 +1,11 @@
 # UBER PICKUPS IN NEW YORK CITY
 ## Data visualization using R  
 
-
+#<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~inouyesan/12.embed">&nbsp;</iframe>
+![](<div>
+    <a href="https://plot.ly/~inouyesan/12/?share_key=uMk4F0PESgoQu3KdtPG6ZC" target="_blank" title="baseBarGraph" style="display: block; text-align: center;"><img src="https://plot.ly/~inouyesan/12.png?share_key=uMk4F0PESgoQu3KdtPG6ZC" alt="baseBarGraph" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="inouyesan:12" sharekey-plotly="uMk4F0PESgoQu3KdtPG6ZC" src="https://plot.ly/embed.js" async></script>
+</div>)
 
 ## Contributors:
 + Shon Inouye
