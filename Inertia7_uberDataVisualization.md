@@ -56,7 +56,7 @@ Using the map of New York City as the background, we plotted the Uber pickup loc
     fullMap 
 
 
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_plot_all2.png?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGE/Uber_plot_all2.png?raw=true)
 
 
 # Bar Graph of Uber Pickups by TLC Base Code
@@ -102,7 +102,7 @@ Now, we can plot the pickup points on a map and distinguish them based on their 
 
     base_plot
 
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_plot_bases.png?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGE/Uber_plot_bases.png?raw=true)
 
 # Plot of Uber Pickups for each Individual Base Code
 We can also plot the pickups for each base individually in order to see which areas these codes cover.
@@ -158,11 +158,11 @@ We can also plot the pickups for each base individually in order to see which ar
     plot(base_B02682)
     plot(base_B02764)
 
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02512.PNG?raw=true)
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02598.PNG?raw=true)
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02617.PNG?raw=true)
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02682.PNG?raw=true)
-![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGES/Uber_base_B02764.PNG?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGE/Uber_base_B02512.PNG?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGE/Uber_base_B02598.PNG?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGE/Uber_base_B02617.PNG?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGE/Uber_base_B02682.PNG?raw=true)
+![](https://github.com/Inouyesan/DataVisualization_Uber_R/blob/master/IMAGE/Uber_base_B02764.PNG?raw=true)
 
 # Using Plotly to See Pickups Over Time  
     # Remove minutes and seconds from Date.Time and create Day column
