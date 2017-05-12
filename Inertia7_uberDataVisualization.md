@@ -185,7 +185,7 @@ We created a new column in our dataset that had each uber pickup with the day it
 
 <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~inouyesan/14.embed"></iframe>
 
-We did not choose the month of April for any particular reason - any month would have worked. The data was just used in order to showcase a line graph produced through plotly. We see that across the course of the month, the total number of rides fluctuate between highs and lows, and we see that at the end of the month there is a spike in usage.
+We did not choose the month of April for any particular reason - any month would have worked. The data was just used in order to showcase a line graph produced through plotly. We see that across the course of the month, the total number of rides fluctuate between highs and lows, and we see that at the end of the month there is a spike in usage. After looking at the month of April for 2014, we can see that there is a gradual increase of Uber pickups through the work week, peaking at the end of the week (Thursday through Saturday). We then see a big drop on Sunday and the trend repeats.
 
 # Conclusion
 
